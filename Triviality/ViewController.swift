@@ -64,25 +64,29 @@ class ViewController: UIViewController {
         userScore.text = "Your score is \(score)"
             if score > 4{
                 winOrLose.text = "You won the game!"
+                //call restartGameFunction
             } else {
                 winOrLose.text = "You lost the game"
+                //call restartGameFunction
             }
             
             
         }
     }
     
-    
+    func restartGame() {
+        currentQuestion = 0
+        newQuestion()
+    }
     
     
     @IBAction func restartGameButton(_ sender: Any) {
        
 //        self.dismiss(animated: false, completion: nil)
-       
-        
-        if flag {
-          newQuestion()
-        }
+       restartGame()
+//        if flag {
+//          newQuestion()
+//        }
 //        }; self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
