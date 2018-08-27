@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     var rightAnswerLocation:UInt32 = 0 //keeps track of which button has the correct answer to compare the user answer to
     var score = 0
     
-    
+    var flag = false
     
     
     
@@ -58,6 +58,7 @@ class ViewController: UIViewController {
         }
         //don't want to call on an element that doesn't exist
         if (currentQuestion != questionBank.count){
+            
             newQuestion()
         } else {
         userScore.text = "Your score is \(score)"
@@ -77,7 +78,12 @@ class ViewController: UIViewController {
     @IBAction func restartGameButton(_ sender: Any) {
        
 //        self.dismiss(animated: false, completion: nil)
-        self.presentingViewController?.dismiss(animated: false, completion: nil)
+       
+        
+        if flag {
+          newQuestion()
+        }
+//        }; self.presentingViewController?.dismiss(animated: false, completion: nil)
     }
     
     
@@ -118,7 +124,7 @@ class ViewController: UIViewController {
                  x + 1
                 */
                 
-                x = 2
+                x += 1
             }
 //            currentQuestion += 1
             
